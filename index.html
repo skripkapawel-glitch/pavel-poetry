@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Скучаю — Павел</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background-image: url('горы.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    .container {
+      display: flex;
+      flex: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      gap: 40px;
+    }
+
+    /* Левая колонка — портрет + плеер */
+    .left-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .portrait {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      border-radius: 50%;
+      border: 4px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      object-fit: cover;
+      margin-bottom: 30px;
+    }
+
+    /* Аудиоплеер — без лишнего фона */
+    audio {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px auto;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 6px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Правая колонка — стихотворение */
+    .right-column {
+      flex: 2;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(15px);
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      color: #fff;
+      overflow-y: auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.6em;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-style: italic;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .poem {
+      line-height: 1.9;
+      font-size: 1.1em;
+    }
+
+    .poem h2 {
+      text-align: center;
+      font-size: 1.5em;
+      margin: 40px 0 20px;
+      color: #ffffff;
+    }
+
+    .poem p {
+      margin: 14px 0;
+      text-indent: 1.5em;
+    }
+
+    .poem .center {
+      text-align: center;
+      text-indent: 0;
+      font-style: italic;
+      opacity: 0.95;
+    }
+
+    /* Футер */
+    footer {
+      margin-top: 20px;
+      text-align: center;
+      padding: 20px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9em;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .left-column,
+      .right-column {
+        width: 100%;
+        max-width: none;
+      }
+
+      .portrait {
+        max-width: 220px;
+      }
+
+      .right-column {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2.2em;
+      }
+
+      audio {
+        max-width: 100%;
+        padding: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Левая колонка: портрет и аудио -->
+    <div class="left-column">
+      <img src="фото портрета.jpg" alt="Портрет Павла" class="portrait" />
+
+      <!-- Чистый аудиоплеер -->
+      <audio controls>
+        <source src="Скрипка Павел - Скучаю .mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает аудио.
+      </audio>
+    </div>
+
+    <!-- Правая колонка: текст стихотворения -->
+    <div class="right-column">
+      <h1>Скучаю</h1>
+      <p class="subtitle">поэма Павла</p>
+
+      <div class="poem">
+        <p class="center">«Я помню чудное мгновенье, передо мной явилась ты…<br>
+        Так, стоп. Это не то произведение»</p>
+        <p class="center">(звук перелистывания страницы)</p>
+        <p class="center">«Вот нашёл»</p>
+
+        <h2>Часть I</h2>
+        <p>Скучаю…</p>
+        <p>Скучаю день и ночь,<br>
+        Скучаю каждую секунду.<br>
+        Казалось бы — и день, и ночь<br>
+        Проходят быстро в расставании.</p>
+
+        <p>Порой стою, смотрю на горы<br>
+        И думаю лишь о тебе.<br>
+        Тот самый день… Ты помнишь?<br>
+        Тот самый день, когда гуляли.</p>
+
+        <p>Гуляли в парке до утра —<br>
+        Была прелестная погода.<br>
+        Гуляли, словно детвора,<br>
+        И мы гуляли до утра.</p>
+
+        <p>Не замечая время, птиц, дорогу,<br>
+        Не замечая пруд и реку,<br>
+        Не замечая ничего,<br>
+        Мы замечали лишь друг друга.</p>
+
+        <p>Мы — пара лебедей,<br>
+        Что расправляли крылья в парке.<br>
+        Мы — пара лебедей,<br>
+        Что веселились до утра.</p>
+
+        <h2>Часть II</h2>
+        <p>Зайдя в квартиру, ты разделась,<br>
+        Пройдя к кровати, обратила взор на стол.<br>
+        Увидев чёрную коробку —<br>
+        Восторгу не было предела.</p>
+
+        <p>Приоткрыв коробку,<br>
+        После долгой разлуки,<br>
+        Озарят тебя светом<br>
+        Камни, что лежат там внутри.</p>
+
+        <p>Первый лот — как по заказу,<br>
+        Прибыл сначала в Кисловодск.<br>
+        Обойдя все закоулки,<br>
+        Прочесав там каждый угол…</p>
+
+        <p>Вот оно! Вон вдали!<br>
+        Сверкает прямо на меня.<br>
+        Подойдя к нему поближе,<br>
+        Сразу понял: «Я забираю!»</p>
+
+        <p>Красивое, яркое, на цепочке —<br>
+        Колье лежит в коробке снизу,<br>
+        Всё переливается под солнцем.</p>
+
+        <p>Второй лот — поинтересней,<br>
+        Совсем не по заказу и без просьб.<br>
+        Прибыв в Ессентуки на этот раз,<br>
+        Бродил по городу воды.</p>
+
+        <p>Подумал я, что нужен там комплект.<br>
+        Подняв голову, взглянув на небо,<br>
+        Решил, что серьги подойдут,<br>
+        И тут же отправился я в путь.</p>
+
+        <p>Нашёл, увидел — сразу же забрал!</p>
+
+        <p>Улыбнувшись, посмотрела на меня,<br>
+        Тонув в улыбке радости и счастья.<br>
+        Целуя тебя в лоб,<br>
+        Люблю тебя.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Павел. Все права защищены.
+  </footer>
+
+</body>
+</html>
